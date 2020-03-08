@@ -492,7 +492,7 @@ func installArgs(r latest.HelmRelease, builds []build.Artifact, valuesSet map[st
 func getArgs(v semver.Version, releaseName string, namespace string) []string {
 	args := []string{"get"}
 	if v.GTE(helm3Version) {
-		args = append(args, "all")
+		args = append(args, "manifest")
 		if namespace != "" {
 			args = append(args, "--namespace", namespace)
 		}
